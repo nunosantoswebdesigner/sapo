@@ -16,6 +16,15 @@
     transition: all .65s ease;
 }
 
+// @position 
+.position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
 /* Main Styles */
 body {
     background-color: @bk-main;
@@ -31,6 +40,8 @@ h1 {
     font-size: 56px;
     font-weight: 900;
     color: @ft-black;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 h2 {
@@ -38,9 +49,21 @@ h2 {
     font-size: 36px;
     font-weight: 600;
     color: @ft-gray;
+    padding-left: 55px;
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 100px;
+        background-color: @ft-gray;
+        position: relative;
+        right: 20px;
+
+    }
 }
 
-p{
+
+p {
     font-family: 'Roboto';
     font-size: 24px;
     font-weight: 300;
@@ -62,40 +85,48 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
+
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
         overflow: hidden;
+
         li {
             a {
                 display: block;
                 padding: 20px 20px;
                 text-decoration: none;
                 color: @ft-black;
+                text-transform: capitalize;
             }
         }
     }
+
     .logo {
-        display: block;
-        float: left;
-        font-size: 2em;
-        padding: 10px 20px;
+        display: flex;
+        padding: 30px 60px;
         text-decoration: none;
+        flex-direction: row;
+        align-items: center;
+
         .logo-title {
             font-size: 36px;
             font-weight: 500;
             color: @ft-white;
             text-transform: uppercase;
+            padding-left: 5px;
         }
     }
-
+    .menu-wrapper {
+        padding: 30px 40px;
+    }    
     .menu {
         clear: both;
         max-height: 0;
         transition: max-height .2s ease-out;
     }
+
     .menu-icon {
         cursor: pointer;
         display: inline-block;
@@ -103,16 +134,19 @@ a {
         position: relative;
         user-select: none;
         float: right;
+
         &:hover {
             background-color: @medium-dark;
             .transition;
         }
+
         .navicon {
             display: block;
             height: 4px;
-            width: 35px;  
+            width: 35px;
             position: relative;
             background-color: @dark;
+
             &:before,
             &:after {
                 content: '';
@@ -122,32 +156,41 @@ a {
                 position: absolute;
                 background-color: @dark;
             }
+
             &:before {
                 top: 8px;
             }
+
             &:after {
                 top: -8px;
             }
         }
     }
+
     .menu-btn {
         display: none;
+
         &:checked {
-            ~ .menu {
-              max-height: 240px;
+            ~.menu {
+                max-height: 240px;
             }
-            ~ .menu-icon {
+
+            ~.menu-icon {
                 .navicon {
                     background: transparent;
+
                     &:before {
-                      transform: rotate(-45deg);
+                        transform: rotate(-45deg);
                     }
+
                     &:after {
-                      transform: rotate(45deg);
+                        transform: rotate(45deg);
                     }
                 }
-                &:not(.steps){
+
+                &:not(.steps) {
                     .navicon {
+
                         &:before,
                         &:after {
                             top: 0;
@@ -155,28 +198,34 @@ a {
                     }
                 }
             }
-        } 
+        }
     }
+
     &.menu-open {
         width: 80vw;
         height: 100vh;
         background-color: @bk-black;
         color: @ft-white;
         right: 0;
+
         .logo-wrapper {
             display: none;
         }
+
         .menu {
             padding: 25px 100px;
         }
+
         .menu-btn {
             display: none;
+
             &:checked {
-                ~ .menu {
-                  max-height: 400px;
+                ~.menu {
+                    max-height: 400px;
                 }
             }
         }
+
         .menu-icon {
             position: absolute;
             top: 0;
@@ -185,6 +234,7 @@ a {
             opacity: 1;
             .transition;
         }
+
         a {
             color: white;
             text-transform: uppercase;
@@ -197,19 +247,42 @@ a {
 */
 section {
     min-height: 768px;
+    padding: 4em 0;
+    .section-title {
+        text-align: left;
+    }
 
-    &.hero-section {
-        background-color: @bk-hero;
-    }
-    &.brand-section {
-        background-color: @bk-brand;
-        
-    }
-    &.game-section {
-        background-color: @bk-game;
-    }
-    &.social-section {
-        background-color: @bk-footer;
+}
+
+.hero-section {
+    background-color: @bk-hero;
+}
+
+.brand-section {
+    background-color: @bk-brand;
+
+}
+
+.game-section {
+    background-color: @bk-game;
+}
+
+.social-section {
+    width: auto;
+    height: 220px;
+    position: relative;
+    background: url('../resources/assets/footer.svg');
+    background-repeat: no-repeat;
+
+    .social-icons {
+        display: flex;
+        background-color: @bk-white;
+        .position-center;
+        transform: translate(-50%, 0);
+
+        .social-icon-item {
+            background-color: @bk-white;
+        }
     }
 }
 
@@ -219,18 +292,26 @@ section {
 @media (min-width: 48em) {
     .header {
         li {
-          float: left;
+            float: left;
         }
+
         a {
-          padding: 20px 30px;
+            padding: 20px 30px;
         }
+
         .menu {
             clear: none;
             float: right;
             max-height: none;
         }
+
         .menu-icon {
             display: none;
+        }
+    }
+    section {
+        .section-title {
+            text-align: center;
         }
     }
 }

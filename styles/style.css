@@ -21,6 +21,12 @@
   -o-transition: all 0.65s ease;
   transition: all 0.65s ease;
 }
+.position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 /* Main Styles */
 body {
   background-color: #414141;
@@ -35,12 +41,24 @@ h1 {
   font-size: 56px;
   font-weight: 900;
   color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 h2 {
   font-family: 'Roboto';
   font-size: 36px;
   font-weight: 600;
   color: #666666;
+  padding-left: 55px;
+}
+h2:before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 100px;
+  background-color: #666666;
+  position: relative;
+  right: 20px;
 }
 p {
   font-family: 'Roboto';
@@ -74,19 +92,24 @@ a {
   padding: 20px 20px;
   text-decoration: none;
   color: #000000;
+  text-transform: capitalize;
 }
 .header .logo {
-  display: block;
-  float: left;
-  font-size: 2em;
-  padding: 10px 20px;
+  display: flex;
+  padding: 30px 60px;
   text-decoration: none;
+  flex-direction: row;
+  align-items: center;
 }
 .header .logo .logo-title {
   font-size: 36px;
   font-weight: 500;
   color: #FFFFFF;
   text-transform: uppercase;
+  padding-left: 5px;
+}
+.header .menu-wrapper {
+  padding: 30px 40px;
 }
 .header .menu {
   clear: both;
@@ -190,18 +213,38 @@ a {
 */
 section {
   min-height: 768px;
+  padding: 4em 0;
 }
-section.hero-section {
+section .section-title {
+  text-align: left;
+}
+.hero-section {
   background-color: #6E6E6E;
 }
-section.brand-section {
+.brand-section {
   background-color: #E4E4E4;
 }
-section.game-section {
+.game-section {
   background-color: #FFFFFF;
 }
-section.social-section {
-  background-color: #68A519;
+.social-section {
+  width: auto;
+  height: 220px;
+  position: relative;
+  background: url('../resources/assets/footer.svg');
+  background-repeat: no-repeat;
+}
+.social-section .social-icons {
+  display: flex;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+}
+.social-section .social-icons .social-icon-item {
+  background-color: #FFFFFF;
 }
 /*
     @ Media Queries
@@ -220,5 +263,8 @@ section.social-section {
   }
   .header .menu-icon {
     display: none;
+  }
+  section .section-title {
+    text-align: center;
   }
 }
