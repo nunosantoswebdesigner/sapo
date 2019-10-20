@@ -1,0 +1,224 @@
+/*
+    @ Main Styles
+    @ Mobile  
+*/
+@import url('font-face.css');
+/*
+    @ Less Variables
+        @ Backgrounds
+        @ Colors
+        @ Fontes
+        @ Conponents
+        @ Helpers
+        @ Hover Efects
+*/
+@import url('resets.css');
+/* mixins */
+.transition {
+  -webkit-transition: all 0.65s ease;
+  -moz-transition: all 0.65s ease;
+  -ms-transition: all 0.65s ease;
+  -o-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+/* Main Styles */
+body {
+  background-color: #414141;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1.4;
+  font-family: 'Roboto', sans-serif;
+}
+/* Fonts Styles */
+h1 {
+  font-family: 'Roboto';
+  font-size: 56px;
+  font-weight: 900;
+  color: #000000;
+}
+h2 {
+  font-family: 'Roboto';
+  font-size: 36px;
+  font-weight: 600;
+  color: #666666;
+}
+p {
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 300;
+  color: #666666;
+}
+a {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+/* header */
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.header ul li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  color: #000000;
+}
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+.header .logo .logo-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  float: right;
+}
+.header .menu-icon:hover {
+  background-color: #737373;
+  -webkit-transition: all 0.65s ease;
+  -moz-transition: all 0.65s ease;
+  -ms-transition: all 0.65s ease;
+  -o-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+.header .menu-icon .navicon {
+  display: block;
+  height: 4px;
+  width: 35px;
+  position: relative;
+  background-color: #333333;
+}
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #333333;
+}
+.header .menu-icon .navicon:before {
+  top: 8px;
+}
+.header .menu-icon .navicon:after {
+  top: -8px;
+}
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.header.menu-open {
+  width: 80vw;
+  height: 100vh;
+  background-color: #000000;
+  color: #FFFFFF;
+  right: 0;
+}
+.header.menu-open .logo-wrapper {
+  display: none;
+}
+.header.menu-open .menu {
+  padding: 25px 100px;
+}
+.header.menu-open .menu-btn {
+  display: none;
+}
+.header.menu-open .menu-btn:checked ~ .menu {
+  max-height: 400px;
+}
+.header.menu-open .menu-icon {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 100%;
+  opacity: 1;
+  -webkit-transition: all 0.65s ease;
+  -moz-transition: all 0.65s ease;
+  -ms-transition: all 0.65s ease;
+  -o-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+.header.menu-open a {
+  color: white;
+  text-transform: uppercase;
+}
+/*
+    @ Main Styles body components
+*/
+section {
+  min-height: 768px;
+}
+section.hero-section {
+  background-color: #6E6E6E;
+}
+section.brand-section {
+  background-color: #E4E4E4;
+}
+section.game-section {
+  background-color: #FFFFFF;
+}
+section.social-section {
+  background-color: #68A519;
+}
+/*
+    @ Media Queries
+*/
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
