@@ -26,6 +26,9 @@
 }
 
 /* Main Styles */
+html {
+    background-color: @bk-brand;
+}
 body {
     background-color: @bk-main;
     font-weight: @ft-weight;
@@ -62,18 +65,20 @@ h2 {
     }
 }
 
-
 p {
     font-family: 'Roboto';
     font-size: 24px;
     font-weight: 300;
+    line-height: 45px;
     color: @ft-gray;
 }
 
 a {
     font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: @ft-white;
 }
 
 /* header */
@@ -105,7 +110,7 @@ a {
 
     .logo {
         display: flex;
-        padding: 30px 60px;
+        padding: 30px 35px;
         text-decoration: none;
         flex-direction: row;
         align-items: center;
@@ -119,7 +124,7 @@ a {
         }
     }
     .menu-wrapper {
-        padding: 30px 40px;
+        padding: 30px 30px 40px 0px;
     }    
     .menu {
         clear: both;
@@ -250,21 +255,198 @@ section {
     padding: 4em 0;
     .section-title {
         text-align: left;
+        padding: 0 30px;
+    }
+    [class*="section-links"] {
+        display: flex;
+        flex-direction: column;
     }
 
 }
 
 .hero-section {
-    background-color: @bk-hero;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    
+    .hero-section-padron {
+        overflow: hidden;
+        img {
+            height: 106vh;
+        }
+    }
+    
+    .hero-section-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 150vh;
+        top: 0;
+        left: 0;
+        
+        .hero-section-figures {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .hero-section-logo {
+            width: 90%;
+            margin: 0 5%;
+            height: 51vh;
+            position: relative;
+
+            img {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        }
+
+        .hero-section-buttons {
+            width: 90%;
+            margin: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            button {
+                width: 65px;
+                height: 65px;
+
+                &:nth-child(1) {
+                    background-color: @color-orange;
+                }
+                
+                &:nth-child(2) {
+                    width: 90px;
+                    height: 90px;
+                    position: relative;
+                    background-color: @color-green;
+                    .button-border {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        transform: translate(-10%, -10%);
+                        width: 110px;
+                        height: 110px;
+                        border: 2px solid @color-green;
+                    }
+                }
+
+                &:nth-child(3) {
+                    background-color: @color-blue;
+                }
+            }
+        }
+    }
+
 }
 
 .brand-section {
     background-color: @bk-brand;
+    padding-top: 8em;
+    .triangle-three {
+        text-align: right;
+        padding: 20px 30px 20px 30px;
+    }
+    .circle-three {
+        display: none;
+        text-align: right;
+        padding: 20px 30px 20px 30px;
+    }
+
+    .brand-section-image {
+        display: flex;
+        background-color: white;
+        margin: 10% 0% 0% 5%;
+        width: 95%;
+        padding: 30px 0px 30px 30px;
+        > .responsive-text {
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 35px;
+        }
+    }
+    .brand-section-description {
+        margin-top: 4rem;
+        position: relative;
+        padding: 5vw 10vw;
+        overflow: hidden;
+        .section-text {
+            position: relative;
+            z-index: 9999;
+        }
+        .circle-dotted {
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 0;
+        }
+        .heighlight {
+            background-color: @color-blue;
+            color: @ft-white;
+        }
+        .hidden-text {
+            .transition;
+        }
+        .more-icon {
+            text-align: right;
+            cursor: pointer;
+            .transition;
+        }
+    }
+    .brand-section-links {
+
+        a {
+            width: 90%;
+            margin: 30px 0 0 30px;
+            background-image: -webkit-linear-gradient(218deg, @bk-brand 18%, @bt-light 0%);
+        }
+
+        a:nth-child(1) {
+            background-image: -webkit-linear-gradient(136deg, @bk-brand 40%, @bt-dark 0%);
+        }
+    }
 
 }
 
 .game-section {
-    background-color: @bk-game;
+    background-color: @bk-white;
+    padding-bottom: 2em;
+    .section-game {
+        background-color: @bk-game;
+         .square-game {
+            width: 80%;
+            margin: 30px;
+            background-color: @square-game;
+            padding: 10%;
+            input {
+                margin-top: 15px;
+                background-color: transparent;
+                border-bottom: 2px solid @ft-black;
+                text-transform: uppercase;
+                &::placeholder {
+                    color: @ft-black;
+                }
+            }
+        }
+    }
+    .game-section-links {
+        margin-top: 30px;
+        a {
+            background-image: -webkit-linear-gradient(136deg, @square-game 40%, @bt-dark 0%);
+        }
+    }
+    .section-route {
+        position: relative;
+        .route-image {
+            margin: 30px;
+            max-width: 80%;
+        }
+        .logo-game {
+            position: absolute;
+            bottom: 30%;
+        }
+    }
 }
 
 .social-section {
@@ -299,6 +481,14 @@ section {
             padding: 20px 30px;
         }
 
+        .logo {
+            padding: 30px 60px;
+        }
+
+        .menu-wrapper {
+            padding: 30px 40px;
+        }
+
         .menu {
             clear: none;
             float: right;
@@ -313,5 +503,51 @@ section {
         .section-title {
             text-align: center;
         }
+    }
+
+    .brand-section {
+        .triangle-three {
+            text-align: left;
+            padding: 20px 30px 20px 150px;
+        }
+        .circle-three {
+            display: block;
+            padding: 20px 150px 20px 30px;
+        }
+        .brand-section-image {
+            width: 30vw;
+            padding: 30px;
+            margin: 5vw 40vw 0vw 30vw;
+            .image {
+                transform: scaleX(-1);
+                img {
+                    min-width: 150px;
+                }
+            }
+        }
+        .brand-section-image {
+            position: relative;
+            z-index: 9999;
+            .section-text {
+                min-width: 600px;
+                margin-left: 60px;
+            }
+            .circle-dotted {
+                position: absolute;
+                top: 300px;
+                right: 230px;
+                z-index: 0;
+            }
+        }
+        .brand-section-description {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+@media (min-width: 68em) {
+    footer {
+        background-color: @bk-footer;
     }
 }

@@ -28,6 +28,9 @@
   transform: translate(-50%, -50%);
 }
 /* Main Styles */
+html {
+  background-color: #E4E4E4;
+}
 body {
   background-color: #414141;
   font-weight: 300;
@@ -64,12 +67,15 @@ p {
   font-family: 'Roboto';
   font-size: 24px;
   font-weight: 300;
+  line-height: 45px;
   color: #666666;
 }
 a {
   font-size: 18px;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #FFFFFF;
 }
 /* header */
 .header {
@@ -96,7 +102,7 @@ a {
 }
 .header .logo {
   display: flex;
-  padding: 30px 60px;
+  padding: 30px 35px;
   text-decoration: none;
   flex-direction: row;
   align-items: center;
@@ -109,7 +115,7 @@ a {
   padding-left: 5px;
 }
 .header .menu-wrapper {
-  padding: 30px 40px;
+  padding: 30px 30px 40px 0px;
 }
 .header .menu {
   clear: both;
@@ -217,15 +223,185 @@ section {
 }
 section .section-title {
   text-align: left;
+  padding: 0 30px;
+}
+section [class*="section-links"] {
+  display: flex;
+  flex-direction: column;
 }
 .hero-section {
-  background-color: #6E6E6E;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.hero-section .hero-section-padron {
+  overflow: hidden;
+}
+.hero-section .hero-section-padron img {
+  height: 106vh;
+}
+.hero-section .hero-section-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 150vh;
+  top: 0;
+  left: 0;
+}
+.hero-section .hero-section-wrapper .hero-section-figures {
+  width: 100%;
+  height: 50vh;
+}
+.hero-section .hero-section-wrapper .hero-section-logo {
+  width: 90%;
+  margin: 0 5%;
+  height: 51vh;
+  position: relative;
+}
+.hero-section .hero-section-wrapper .hero-section-logo img {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons {
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons button {
+  width: 65px;
+  height: 65px;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons button:nth-child(1) {
+  background-color: #FF9933;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons button:nth-child(2) {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  background-color: #33CC99;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons button:nth-child(2) .button-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-10%, -10%);
+  width: 110px;
+  height: 110px;
+  border: 2px solid #33CC99;
+}
+.hero-section .hero-section-wrapper .hero-section-buttons button:nth-child(3) {
+  background-color: #3399CC;
 }
 .brand-section {
   background-color: #E4E4E4;
+  padding-top: 8em;
+}
+.brand-section .triangle-three {
+  text-align: right;
+  padding: 20px 30px 20px 30px;
+}
+.brand-section .circle-three {
+  display: none;
+  text-align: right;
+  padding: 20px 30px 20px 30px;
+}
+.brand-section .brand-section-image {
+  display: flex;
+  background-color: white;
+  margin: 10% 0% 0% 5%;
+  width: 95%;
+  padding: 30px 0px 30px 30px;
+}
+.brand-section .brand-section-image > .responsive-text {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+}
+.brand-section .brand-section-description {
+  margin-top: 4rem;
+  position: relative;
+  padding: 5vw 10vw;
+  overflow: hidden;
+}
+.brand-section .brand-section-description .section-text {
+  position: relative;
+  z-index: 9999;
+}
+.brand-section .brand-section-description .circle-dotted {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 0;
+}
+.brand-section .brand-section-description .heighlight {
+  background-color: #3399CC;
+  color: #FFFFFF;
+}
+.brand-section .brand-section-description .hidden-text {
+  -webkit-transition: all 0.65s ease;
+  -moz-transition: all 0.65s ease;
+  -ms-transition: all 0.65s ease;
+  -o-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+.brand-section .brand-section-description .more-icon {
+  text-align: right;
+  cursor: pointer;
+  -webkit-transition: all 0.65s ease;
+  -moz-transition: all 0.65s ease;
+  -ms-transition: all 0.65s ease;
+  -o-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+.brand-section .brand-section-links a {
+  width: 90%;
+  margin: 30px 0 0 30px;
+  background-image: -webkit-linear-gradient(218deg, #E4E4E4 18%, #7ABB00 0%);
+}
+.brand-section .brand-section-links a:nth-child(1) {
+  background-image: -webkit-linear-gradient(136deg, #E4E4E4 40%, #5B8F22 0%);
 }
 .game-section {
   background-color: #FFFFFF;
+  padding-bottom: 2em;
+}
+.game-section .section-game {
+  background-color: #FFFFFF;
+}
+.game-section .section-game .square-game {
+  width: 80%;
+  margin: 30px;
+  background-color: #CBCBCB;
+  padding: 10%;
+}
+.game-section .section-game .square-game input {
+  margin-top: 15px;
+  background-color: transparent;
+  border-bottom: 2px solid #000000;
+  text-transform: uppercase;
+}
+.game-section .section-game .square-game input::placeholder {
+  color: #000000;
+}
+.game-section .game-section-links {
+  margin-top: 30px;
+}
+.game-section .game-section-links a {
+  background-image: -webkit-linear-gradient(136deg, #CBCBCB 40%, #5B8F22 0%);
+}
+.game-section .section-route {
+  position: relative;
+}
+.game-section .section-route .route-image {
+  margin: 30px;
+  max-width: 80%;
+}
+.game-section .section-route .logo-game {
+  position: absolute;
+  bottom: 30%;
 }
 .social-section {
   width: auto;
@@ -256,6 +432,12 @@ section .section-title {
   .header a {
     padding: 20px 30px;
   }
+  .header .logo {
+    padding: 30px 60px;
+  }
+  .header .menu-wrapper {
+    padding: 30px 40px;
+  }
   .header .menu {
     clear: none;
     float: right;
@@ -266,5 +448,47 @@ section .section-title {
   }
   section .section-title {
     text-align: center;
+  }
+  .brand-section .triangle-three {
+    text-align: left;
+    padding: 20px 30px 20px 150px;
+  }
+  .brand-section .circle-three {
+    display: block;
+    padding: 20px 150px 20px 30px;
+  }
+  .brand-section .brand-section-image {
+    width: 30vw;
+    padding: 30px;
+    margin: 5vw 40vw 0vw 30vw;
+  }
+  .brand-section .brand-section-image .image {
+    transform: scaleX(-1);
+  }
+  .brand-section .brand-section-image .image img {
+    min-width: 150px;
+  }
+  .brand-section .brand-section-image {
+    position: relative;
+    z-index: 9999;
+  }
+  .brand-section .brand-section-image .section-text {
+    min-width: 600px;
+    margin-left: 60px;
+  }
+  .brand-section .brand-section-image .circle-dotted {
+    position: absolute;
+    top: 300px;
+    right: 230px;
+    z-index: 0;
+  }
+  .brand-section .brand-section-description {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 68em) {
+  footer {
+    background-color: #68A519;
   }
 }
